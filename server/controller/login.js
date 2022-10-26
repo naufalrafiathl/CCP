@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs");
-const mysql = require("mysql2");
+const mysql = require("mysql2/promise");
 const jwt = require("../utils/jwt");
 
 async function login(req, res, db) {
