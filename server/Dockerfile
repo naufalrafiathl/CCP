@@ -4,5 +4,5 @@ COPY package.json ./
 COPY package-lock.json ./
 COPY ./ ./
 RUN npm i
-RUN npm rebuild bcrypt --build-from-source
+RUN npm uninstall --save bcrypt
 CMD ["npm", "run", "start"]
