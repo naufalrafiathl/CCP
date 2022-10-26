@@ -6,7 +6,7 @@ require("dotenv").config();
 const bcrypt = require("bcryptjs");
 const express = require("express");
 const app = express();
-const mysql = require("mysql");
+const mysql = require("mysql2");
 
 app.listen(process.env.PORT, () =>
   console.log(`Server Started on port ${process.env.PORT}...`)

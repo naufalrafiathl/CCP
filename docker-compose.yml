@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'
 services:
   mysql_db:
     image: mysql
@@ -9,7 +9,7 @@ services:
     networks:
       - appNetwork
     ports:
-      - "3307:3306"
+      - "3306:3306"
     environment:
       MYSQL_DATABASE: 'getMovieDB'
       # So you don't have to use root, but you can if you like
@@ -35,6 +35,7 @@ services:
     volumes:
       - /app/node_modules
       - ./server:/app
+    command: bash -c 'while !</dev/tcp/mysql_db/3306; do sleep 1; done; npm start'
     networks:
       - appNetwork
     ports:

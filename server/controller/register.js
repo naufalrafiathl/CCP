@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 
 async function register(req, res, db) {
   const fullName = req.body.full_name;

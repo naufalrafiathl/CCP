@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const jwt = require("../utils/jwt");
 
 async function getMovie(req, res, db) {
