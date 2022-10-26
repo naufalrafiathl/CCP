@@ -23,13 +23,17 @@ services:
       - api
       - client
     restart: always
-    build: ./nginx/
+    build: 
+          context: ./nginx/
+          dockerfile: Dockerfile
     networks:
       - appNetwork
     ports:
       - "8080:80"
   api:
-    build: ./server/
+    build:
+          context: ./server/
+          dockerfile: Dockerfile
     depends_on:
       - mysql_db
     volumes:
@@ -44,7 +48,9 @@ services:
       - ./server/.env
   client:
     stdin_open: true
-    build: ./client/
+    build:
+          context: ./client/
+          dockerfile: Dockerfile
     ports:
       - "3050:3050"
     networks:
